@@ -2,6 +2,7 @@
 {% load staticfiles %}
 <link rel="stylesheet" href="{% static 'stories/reset.css' %}" />
 <link rel="stylesheet" href="{% static 'stories/style.css' %}" />
+<link rel="stylesheet" href="{% static 'stories/pages.css' %}" />
 <script src="{% static 'stories/marked.min.js'%}"></script>
 
 <script>
@@ -20,14 +21,23 @@
   <li><a href="{% url 'about' %}">About</a></li>
 </ul>
 
-<h1>{{ story.title }}</h1>
-<div id="mdcontent">
-  {{ story.text }}
+<div id="content">
+  <h1>{{ story.title }}</h1>
+  <div id="mdcontent">
+    {{ story.text }}
+  </div>
+  <br/>
+  <div>
+    <div class="floatright" id="timestamp">
+      {{story.pub_date }} <br/>
+    </div>
+    <div id="report">
+      Is this story spam, illegal, or threatening? <br/>
+      Please report it to: <a href="mailto:reportstory@wastevensv.com">reportstory@wastevensv.com</a>.<br/>
+      Please include a link to the story and a brief explanation of why it should be removed.<br/>
+    </div>
+  </div>
 </div>
-<br/>
-<div id="footnote">
-  {{story.pub_date }}
+<div id="footer">
+  <a target="_blank" href="http://www.wastevensv.com/">100 Stories was created by William A Stevens V</a>
 </div>
-<script>
-  formatOut()
-</script>

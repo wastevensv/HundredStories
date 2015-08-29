@@ -23,7 +23,8 @@ def write(request):
   return render(request, 'stories/write.html')
 
 def about(request):
-  return render(request, 'stories/about.html')
+  story_count=Story.objects.count()
+  return render(request, 'stories/about.html', {'story_count': story_count})
 
 def newstory(request):
   try:

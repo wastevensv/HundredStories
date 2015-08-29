@@ -30,9 +30,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  margin:20px;
   line-height: 1;
-  background-color: #DCDCDC;
 }
 ol, ul {
   list-style: none;
@@ -55,7 +53,16 @@ li {
 }
 
 /* Additional Styles */
+html {
+  background-color:#BFBFBF;
+}
 
+body {
+  margin:15px;
+}
+p {
+  padding-bottom:0.5em;
+}
 h1 {
   font-weight: lighter;
   font-size: 2em;

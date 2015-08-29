@@ -2,8 +2,8 @@
 <title>Story Editor | 100 Stories</title>
 {% load staticfiles %}
 <link rel="stylesheet" href="{% static 'stories/reset.css' %}" />
-<link rel="stylesheet" href="{% static 'stories/write.css' %}" />
 <link rel="stylesheet" href="{% static 'stories/style.css' %}" />
+<link rel="stylesheet" href="{% static 'stories/write.css' %}" />
 <script src="{% static 'stories/marked.min.js'%}"></script>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
 <!--[if lt IE 9]>
@@ -36,12 +36,13 @@
     <input type="submit" value="Done"><br/>
     <div id="help">
       <hr/>
-      <b> Instructions </b><br/>
-      A simple browser based markdown editor. <br/>
-      Enter markdown on the left, get HTML on the right. <br/>
-      Hit the Save button to export it. <br/>
-      <a href="http://daringfireball.net/projects/markdown/syntax">Markdown Syntax</a>
-      <a class="floatright" href="http://www.wastevensv.com/">Made by William A Stevens V</a>
+      <em> Instructions </em><br/>
+      Write your story. It can be about your day, a fiction, an opinion, or just whatever comes to mind. <br/>
+      Enter <a target="_blank" href="http://daringfireball.net/projects/markdown/syntax">markdown</a> or plain text on the left, see your story on the right. <br/>
+      Hit the Done button to submit it. <br/>
+      All submissions are final. No editing. No deletion. <br/>
+      <a target="_blank" href="{% url 'about' %}">Please read the basic rules before posting.</a><br/>
+      <a target="_blank" href="http://www.wastevensv.com/">100 Stories was created by William A Stevens V</a>
     </div>
   </form>
   <div id="content" class="col colright">
@@ -50,6 +51,6 @@
 </div>
 <div class="github-fork-ribbon-wrapper right-bottom">
   <div class="github-fork-ribbon">
-    <a href="https://github.com/wastevensv/MDEdit">Fork me on GitHub</a>
+    <a target="_blank" href="https://github.com/wastevensv/MDEdit">Fork me on GitHub</a>
   </div>
 </div> 
