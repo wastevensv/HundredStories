@@ -1,7 +1,4 @@
 body {
-  background-color: #DFDFDF;
-  padding:5px;
-  border-radius:5px;
   width:80%;
   max-width:1000px;
   margin-left:auto;
@@ -9,8 +6,9 @@ body {
 }
 
 #content {
-  padding-left:5px;
-  padding-right:5px;
+  background-color: #DFDFDF;
+  padding:5px;
+  border-radius:5px;
 }
 
 pre, code {
