@@ -1,0 +1,55 @@
+<!doctype html>
+<title>Story Editor | 100 Stories</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'stories/reset.css' %}" />
+<link rel="stylesheet" href="{% static 'stories/write.css' %}" />
+<link rel="stylesheet" href="{% static 'stories/style.css' %}" />
+<script src="{% static 'stories/marked.min.js'%}"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.min.css" />
+<![endif]-->
+<script>
+  function updateOut() {
+    var mdText = document.getElementById("editor").value
+    output  = ""
+    output += "<h1>"+document.getElementById('entryTitle').value+"</h1>\n"
+    output += marked(mdText)
+    document.getElementById('mdcontent').innerHTML = output;
+  }
+  updateOut()
+</script>
+
+
+<ul class="nav">
+  <li>100 Stories</li>
+  <li><a href="{% url 'index' %}">Home</a></li>
+  <li><a href="{% url 'write' %}">Write</a></li>
+  <li><a href="{% url 'about' %}">About</a></li>
+</ul>
+
+<div class="col-wrapper">
+  <form action="{% url 'newstory' %}" method="post" class="col colleft">
+    {% csrf_token %}
+    <input id="entryTitle" placeholder="Entry Title" onChange="updateOut()" name="title"/>
+    <textarea id="editor" onChange="updateOut()" name="text"></textarea>
+    <input type="submit" value="Done"><br/>
+    <div id="help">
+      <hr/>
+      <b> Instructions </b><br/>
+      A simple browser based markdown editor. <br/>
+      Enter markdown on the left, get HTML on the right. <br/>
+      Hit the Save button to export it. <br/>
+      <a href="http://daringfireball.net/projects/markdown/syntax">Markdown Syntax</a>
+      <a class="floatright" href="http://www.wastevensv.com/">Made by William A Stevens V</a>
+    </div>
+  </form>
+  <div id="content" class="col colright">
+    <div id="mdcontent"></div>
+  </div>
+</div>
+<div class="github-fork-ribbon-wrapper right-bottom">
+  <div class="github-fork-ribbon">
+    <a href="https://github.com/wastevensv/MDEdit">Fork me on GitHub</a>
+  </div>
+</div> 

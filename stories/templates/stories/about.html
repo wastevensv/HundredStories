@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<title> Recent Stories | 100 Stories </title>
+<title> About | 100 Stories </title>
 <link rel="stylesheet" href="{% static 'stories/reset.css' %}" />
 <link rel="stylesheet" href="{% static 'stories/style.css' %}" />
 
@@ -10,15 +10,3 @@
   <li><a href="{% url 'about' %}">About</a></li>
 </ul>
 
-<h1>Recent Stories</h1>
-
-{% if recent_story_list %}
-  <ul class="list">
-  {% for story in recent_story_list %}
-    <li><a href="{% url 'detail' story.id %}">
-      {{ story.title }}</a></li>
-  {% endfor %}
-  </ul>
-{% else %}
-  <p>No stories yet.</p>
-{% endif %}
