@@ -14,3 +14,5 @@ lib
 lib64
 *.swp
 *~
+deploy.sh
+rsync_exclude.txt
