@@ -9,7 +9,7 @@ from .models import Story
 
 # Create your views here.
 def index(request):
-  recent_story_list = Story.objects.order_by('-id')[:10]
+  recent_story_list = Story.objects.order_by('-id')[:100]
   context = RequestContext(request, {
     'recent_story_list': recent_story_list,
   })
