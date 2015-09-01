@@ -9,12 +9,13 @@
 <!--[if lt IE 9]>
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.min.css" />
 <![endif]-->
+
 <script>
   function updateOut() {
     var mdText = document.getElementById("editor").value
     output  = ""
     output += "<h1>"+document.getElementById('entryTitle').value+"</h1>\n"
-    output += marked(mdText)
+    output += mdText
     document.getElementById('mdcontent').innerHTML = output;
   }
   updateOut()
@@ -38,7 +39,7 @@
       <hr/>
       <em> Instructions </em><br/>
       Write your story. It can be about your day, a fiction, an opinion, or just whatever comes to mind. <br/>
-      Enter <a target="_blank" href="http://daringfireball.net/projects/markdown/syntax">markdown</a> or plain text on the left, see your story on the right. <br/>
+      Enter plain text on the left, see your story on the right. <br/>
       Hit the Done button to submit it. <br/>
       All submissions are final. No editing. No deletion. <br/>
       <a target="_blank" href="{% url 'about' %}">Please read the basic rules before posting.</a><br/>
@@ -46,7 +47,7 @@
     </div>
   </form>
   <div id="content" class="col colright">
-    <div id="mdcontent"></div>
+    <pre id="mdcontent"></pre>
   </div>
 </div>
 <div class="github-fork-ribbon-wrapper right-bottom">

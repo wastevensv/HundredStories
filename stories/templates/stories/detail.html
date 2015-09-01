@@ -5,15 +5,6 @@
 <link rel="stylesheet" href="{% static 'stories/pages.css' %}" />
 <script src="{% static 'stories/marked.min.js'%}"></script>
 
-<script>
-  function formatOut() {
-    var mdText = document.getElementById("mdcontent").innerHTML
-    output  = ""
-    output += marked(mdText)
-    document.getElementById('mdcontent').innerHTML = output;
-  }
-</script>
-
 <ul class="nav">
   <li>100 Stories</li>
   <li><a href="{% url 'index' %}">Read</a></li>
@@ -23,9 +14,9 @@
 
 <div id="content">
   <h1>{{ story.title }}</h1>
-  <div id="mdcontent">
-    {{ story.text }}
-  </div>
+  <pre id="content">
+{{ story.text }}
+  </pre>
   <br/>
   <div>
     <div class="floatright" id="timestamp">

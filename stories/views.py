@@ -29,8 +29,9 @@ def about(request):
 def newstory(request):
   try:
     if not request.POST['title']: title = "Untitled"
+    title = request.POST['title']
     story = Story(title=title, text=request.POST['text'], pub_date=timezone.now())
-  except e:
+  except Exception as e:
     print(e,file=sys.stderr)
     return HttpResponse("Error Posting Story")
   story.save()
