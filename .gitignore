@@ -17,3 +17,4 @@ lib64
 deploy.sh
 rsync_exclude.txt
 db.sqlite3
+secret_key.txt
