@@ -1,6 +1,6 @@
 import sys
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.utils import timezone
@@ -9,7 +9,7 @@ from .models import Story
 
 # Create your views here.
 def index(request):
-  recent_story_list = Story.objects.order_by('-id')[:100]
+  recent_story_list = Story.objects.filter(approved=True).order_by('-id')[:100]
   context = RequestContext(request, {
     'recent_story_list': recent_story_list,
   })
@@ -35,4 +35,4 @@ def newstory(request):
     print(e,file=sys.stderr)
     return HttpResponse("Error Posting Story")
   story.save()
-  return render(request, 'stories/detail.html', {'story': story})
+  return redirect('detail', story.id )

@@ -7,6 +7,7 @@ from django.utils import timezone
 class Story(models.Model):
   text = models.TextField()
   title = models.CharField(max_length=200)
+  approved = models.NullBooleanField(null=True)
   pub_date = models.DateField('date published')
   def __str__(self):
     return self.title
