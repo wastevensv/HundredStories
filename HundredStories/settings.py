@@ -24,6 +24,7 @@ try:
   with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 except FileNotFoundError:
+  SECRET_KEY = 'thisisnotasecurekey'
   pass
 
 # SECURITY WARNING: don't run with debug turned on in production!
