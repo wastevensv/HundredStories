@@ -1,2 +1,2 @@
-# HundredStories [![Build Status](https://magnum.travis-ci.com/wastevensv/HundredStories.svg?token=Tk4CZxXs9qNH7jWwNFpq&branch=master)](https://magnum.travis-ci.com/wastevensv/HundredStories)
+# HundredStories [![Build Status](https://travis-ci.org/wastevensv/HundredStories.svg)](https://travis-ci.org/wastevensv/HundredStories)
 An anonymous storytelling platform written in django.
